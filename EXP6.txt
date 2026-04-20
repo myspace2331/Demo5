@@ -1,0 +1,76 @@
+EXP6
+Apply concept pf gestures in flutter app
+
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Light Switch',
+      home: MyStatefulWidget(),
+    );
+  }
+}
+
+class MyStatefulWidget extends StatefulWidget {
+  @override
+  createState() => MyStatefulWidgetState();
+}
+
+class MyStatefulWidgetState extends State<MyStatefulWidget> {
+  bool lightIsOn = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+    
+      backgroundColor: lightIsOn ? Colors.yellow.shade100 : Colors.grey.shade900,
+      
+      appBar: AppBar(
+        title: Text('CHANGE STATE OF LIGHTS'),
+        backgroundColor: Colors.blueGrey,
+      ),
+      body: Container(
+        alignment: FractionalOffset.center,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Icon(
+                Icons.lightbulb_outline,
+               
+                color: lightIsOn ? Colors.yellow.shade700 : Colors.white,
+                size: 100,
+              ),
+            ),
+            SizedBox(height: 20),
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  lightIsOn = !lightIsOn;
+                });
+              },
+              child: Container(
+              
+                color: Colors.blueGrey, 
+                padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                child: Text(
+                  lightIsOn ? 'TURN LIGHT OFF' : 'TURN LIGHT ON',
+                  style: TextStyle(
+                    color: Colors.white, 
+                    fontWeight: FontWeight.bold
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

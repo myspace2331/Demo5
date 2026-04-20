@@ -1,0 +1,1212 @@
+EXPERIMENT 1 (GUI APPROACH – UBUNTU)
+
+## 🧪 Title:
+
+**Installation and Configuration of Flutter Environment using Android Studio (GUI Method)**
+
+---
+
+## 🎯 Aim:
+
+To install and configure Flutter development environment on Ubuntu using Android Studio.
+
+---
+
+## 🛠️ Tools Required:
+
+* Ubuntu OS
+* Android Studio
+* Flutter SDK
+* Internet connection
+
+---
+
+## ⚙️ Procedure (GUI-BASED – EXAM CORRECT ✅)
+
+### 🔹 Step 1: Install Android Studio
+
+1. Open browser
+2. Go to Android Studio official website
+3. Download Linux version
+4. Extract downloaded file
+5. Open folder → `android-studio/bin`
+6. Double click **studio.sh**
+
+👉 Android Studio will launch
+
+---
+
+### 🔹 Step 2: Complete Initial Setup
+
+* Click **Next → Next → Finish**
+* Wait for:
+
+  * SDK installation
+  * Required components download
+
+---
+
+### 🔹 Step 3: Install Flutter Plugin (VERY IMPORTANT 🔥)
+
+1. Open Android Studio
+2. Click:
+
+   * **More Actions → Plugins** *(or File → Settings → Plugins)*
+3. Search **Flutter**
+4. Click **Install**
+
+👉 It will also install **Dart plugin automatically**
+
+5. Click **Restart IDE**
+
+---
+
+### 🔹 Step 4: Configure Flutter SDK Path
+
+1. After restart → Click **New Flutter Project**
+2. Android Studio will ask for Flutter SDK
+
+👉 Provide path:
+
+```
+/home/your_username/flutter
+```
+
+3. Click **Next**
+
+---
+
+### 🔹 Step 5: Verify Flutter Setup
+
+1. Go to:
+
+   * **File → Settings → Languages & Frameworks → Flutter**
+2. Check:
+
+   * Flutter SDK path is correct
+
+---
+
+### 🔹 Step 6: Install Android SDK (GUI Way)
+
+1. Go to:
+
+   * **More Actions → SDK Manager**
+2. Under:
+
+   * SDK Platforms → Select latest Android version
+3. Click **Apply → OK**
+
+---
+
+### 🔹 Step 7: Setup Emulator (GUI)
+
+1. Go to:
+
+   * **Tools → Device Manager**
+2. Click **Create Device**
+3. Select:
+
+   * Phone → Pixel
+4. Download system image
+5. Click **Finish**
+6. Start emulator ▶
+
+---
+
+### 🔹 Step 8: Accept Licenses (GUI Assisted)
+
+If prompted, Android Studio will show:
+
+* Accept licenses → Click **Accept**
+
+---
+
+## 💻 Code:
+
+(No code required)
+
+---
+
+## 🖥️ Output:
+
+* Flutter plugin installed successfully
+* Android Studio configured for Flutter development
+* Emulator runs successfully
+
+---
+
+
+# 📘 EXPERIMENT 2 (GUI APPROACH)
+
+## 🧪 Title:
+
+**Create a Simple Flutter Application (Hello World) using Android Studio**
+
+---
+
+## 🎯 Aim:
+
+To create and run a basic Flutter application using Android Studio GUI.
+
+---
+
+## 🛠️ Tools Required:
+
+* Ubuntu OS
+* Android Studio
+* Flutter SDK (pre-installed)
+* Emulator / Physical Device
+
+---
+
+## ⚙️ Procedure (ANDROID STUDIO GUI – STEP BY STEP ✅)
+
+### 🔹 Step 1: Open Android Studio
+
+* Click **Show Applications**
+* Search **Android Studio**
+* Open it
+
+---
+
+### 🔹 Step 2: Create New Flutter Project
+
+1. Click **New Flutter Project**
+2. Select **Flutter Application**
+3. Click **Next**
+
+---
+
+### 🔹 Step 3: Configure Flutter SDK
+
+* In Flutter SDK path:
+
+  ```
+  /home/your_username/flutter
+  ```
+* Click **Next**
+
+---
+
+### 🔹 Step 4: Enter Project Details
+
+* Project Name: `hello_app`
+* Project Location: Choose folder
+* Description: Simple Hello World App
+* Click **Next**
+
+---
+
+### 🔹 Step 5: Set Package Name
+
+(Default is fine)
+
+Click **Finish**
+
+👉 Android Studio will now automatically:
+
+* Create project
+* Install dependencies
+* Open project
+
+---
+
+### 🔹 Step 6: Understand Project Structure (VERY IMPORTANT 🔥)
+
+Left panel → Project View:
+
+* `lib/` → Main code folder
+* `main.dart` → Main file (MOST IMPORTANT)
+* `pubspec.yaml` → Dependencies
+
+👉 Double click:
+
+```dart
+lib/main.dart
+```
+
+---
+
+### 🔹 Step 7: Replace Code in `main.dart`
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Hello App',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('My First App'),
+        ),
+        body: Center(
+          child: Text(
+            'Hello World!',
+            style: TextStyle(fontSize: 24),
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+---
+
+### 🔹 Step 8: Start Emulator (GUI Way)
+
+1. Top menu → **Tools**
+2. Click **Device Manager**
+3. Click **Create Device**
+4. Select:
+
+   * Phone → Pixel
+5. Download system image if needed
+6. Click **Finish**
+7. Click ▶ to start emulator
+
+---
+
+### 🔹 Step 9: Run the App
+
+* Click **Run ▶ button** (top toolbar)
+* Select emulator
+* Wait for build
+
+---
+
+## 💻 Code Explanation (Viva Ready 🔥)
+
+### 🔸 `MaterialApp`
+
+* Root widget of app
+
+### 🔸 `Scaffold`
+
+* Provides layout (AppBar + Body)
+
+### 🔸 `AppBar`
+
+* Top header
+
+### 🔸 `Center`
+
+* Aligns content in center
+
+### 🔸 `Text`
+
+* Displays text
+
+---
+
+## 🖥️ Output:
+
+* App opens in emulator
+* Displays:
+
+  * **My First App** (top bar)
+  * **Hello World!** (center)
+
+---
+
+EXPERIMENT 3
+🧪 Title:
+
+Design a Flutter App with Basic UI Widgets (Buttons & Layouts)
+
+🎯 Aim:
+
+To design a Flutter application using basic UI widgets like Button, Text, Row, Column, and Container.
+
+🛠️ Tools Required:
+Ubuntu OS
+Android Studio
+Flutter SDK
+Emulator / Physical Device
+⚙️ Procedure (GUI – ANDROID STUDIO ✅)
+🔹 Step 1: Open Android Studio
+Launch Android Studio
+Click Open → Select previous project
+OR
+Click New Flutter Project → Create new project
+🔹 Step 2: Open main.dart
+Go to:
+lib → main.dart
+Delete existing code
+🔹 Step 3: Write UI Code
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("UI Demo"),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            "Welcome to Flutter",
+            style: TextStyle(fontSize: 22),
+          ),
+          
+          SizedBox(height: 20),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                onPressed: () {},
+                child: Text("Button 1"),
+              ),
+              SizedBox(width: 10),
+              ElevatedButton(
+                onPressed: () {},
+                child: Text("Button 2"),
+              ),
+            ],
+          ),
+
+          SizedBox(height: 20),
+
+          Container(
+            height: 100,
+            width: 200,
+            color: Colors.blue,
+            child: Center(
+              child: Text(
+                "Container",
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+🔹 Step 4: Run Emulator
+Go to Tools → Device Manager
+Start emulator
+🔹 Step 5: Run App
+Click ▶ Run button
+Select emulator
+💻 Code Explanation (Viva Gold 🔥)
+🔸 Column
+Arranges widgets vertically
+🔸 Row
+Arranges widgets horizontally
+🔸 SizedBox
+Adds spacing
+🔸 ElevatedButton
+Creates clickable button
+🔸 Container
+Used for styling (size, color, alignment)
+🖥️ Output:
+App shows:
+Text: Welcome to Flutter
+Two buttons side by side
+A blue container box
+
+
+EXPERIMENT 4
+🧪 Title:
+
+Implement Navigation Between Two Screens in Flutter
+
+🎯 Aim:
+
+To create a Flutter application that navigates from one screen to another using buttons.
+
+🛠️ Tools Required:
+Ubuntu OS
+Android Studio
+Flutter SDK
+Emulator / Physical Device
+⚙️ Procedure (GUI – ANDROID STUDIO ✅)
+🔹 Step 1: Open Android Studio
+Open existing project
+OR
+Create new Flutter project
+🔹 Step 2: Open main.dart
+Navigate to:
+lib → main.dart
+Remove existing code
+🔹 Step 3: Write Code for Navigation
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: FirstScreen(),
+    );
+  }
+}
+
+// First Screen
+class FirstScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("First Screen"),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          child: Text("Go to Second Screen"),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => SecondScreen()),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+// Second Screen
+class SecondScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Second Screen"),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          child: Text("Back"),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
+    );
+  }
+}
+🔹 Step 4: Start Emulator
+Tools → Device Manager
+Start virtual device
+🔹 Step 5: Run Application
+Click ▶ Run button
+Select emulator
+💻 Code Explanation (VERY IMPORTANT 🔥)
+🔸 Navigator.push()
+Moves to next screen
+🔸 MaterialPageRoute
+Defines route for navigation
+🔸 Navigator.pop()
+Returns to previous screen
+🖥️ Output:
+First screen shows button
+Clicking button → navigates to second screen
+Second screen has Back button
+Clicking back → returns to first screen
+
+
+EXPERIMENT 5
+🧪 Title:
+
+Create a Flutter Form with Input Validation
+
+🎯 Aim:
+
+To design a Flutter application that accepts user input using TextField and performs validation.
+
+🛠️ Tools Required:
+Ubuntu OS
+Android Studio
+Flutter SDK
+Emulator / Physical Device
+⚙️ Procedure (GUI – ANDROID STUDIO ✅)
+🔹 Step 1: Open Android Studio
+Open existing project
+OR
+Create new Flutter project
+🔹 Step 2: Open main.dart
+Go to:
+lib → main.dart
+Remove existing code
+🔹 Step 3: Write Form Code
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: FormPage(),
+    );
+  }
+}
+
+class FormPage extends StatefulWidget {
+  @override
+  _FormPageState createState() => _FormPageState();
+}
+
+class _FormPageState extends State<FormPage> {
+  final _formKey = GlobalKey<FormState>();
+  String name = "";
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Form Example"),
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(20),
+        child: Form(
+          key: _formKey,
+          child: Column(
+            children: [
+              TextFormField(
+                decoration: InputDecoration(labelText: "Enter Name"),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "Name cannot be empty";
+                  }
+                  return null;
+                },
+                onSaved: (value) {
+                  name = value!;
+                },
+              ),
+
+              SizedBox(height: 20),
+
+              ElevatedButton(
+                child: Text("Submit"),
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    _formKey.currentState!.save();
+
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text("Hello $name")),
+                    );
+                  }
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+🔹 Step 4: Start Emulator
+Go to Tools → Device Manager
+Start virtual device
+🔹 Step 5: Run Application
+Click ▶ Run button
+Select emulator
+💻 Code Explanation (VERY IMPORTANT 🔥)
+🔸 Form
+Container for input fields
+🔸 GlobalKey<FormState>
+Used to manage form state
+🔸 TextFormField
+Input field with validation
+🔸 validator
+Checks user input
+🔸 onSaved
+Stores input value
+🔸 ScaffoldMessenger
+Shows message (SnackBar)
+🖥️ Output:
+Input field appears
+If empty → shows error
+If valid → shows:
+👉 Hello <name>
+
+
+EXPERIMENT 6
+🧪 Title:
+
+Display a List of Items using ListView in Flutter
+
+🎯 Aim:
+
+To create a Flutter application that displays a list of items using ListView widget.
+
+🛠️ Tools Required:
+Ubuntu OS
+Android Studio
+Flutter SDK
+Emulator / Physical Device
+⚙️ Procedure (GUI – ANDROID STUDIO ✅)
+🔹 Step 1: Open Android Studio
+Open existing project
+OR
+Create new Flutter project
+🔹 Step 2: Open main.dart
+Navigate to:
+lib → main.dart
+Delete existing code
+🔹 Step 3: Write ListView Code
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  final List<String> items = [
+    "Apple",
+    "Banana",
+    "Mango",
+    "Orange",
+    "Grapes"
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text("ListView Example")),
+        body: ListView.builder(
+          itemCount: items.length,
+          itemBuilder: (context, index) {
+            return ListTile(
+              leading: Icon(Icons.food_bank),
+              title: Text(items[index]),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+🔹 Step 4: Start Emulator
+Go to Tools → Device Manager
+Start virtual device
+🔹 Step 5: Run Application
+Click ▶ Run button
+Select emulator
+💻 Code Explanation (Viva Gold 🔥)
+🔸 ListView
+Displays scrollable list
+🔸 ListView.builder
+Efficient for large/dynamic lists
+🔸 itemCount
+Number of items
+🔸 itemBuilder
+Builds each list item
+🔸 ListTile
+Pre-designed list item (icon + text)
+🖥️ Output:
+Scrollable list appears
+Items displayed:
+Apple
+Banana
+Mango
+Orange
+Grapes
+
+
+EXPERIMENT 7
+🧪 Title:
+
+Display Items using GridView in Flutter
+
+🎯 Aim:
+
+To create a Flutter application that displays items in a grid format using GridView.
+
+🛠️ Tools Required:
+Ubuntu OS
+Android Studio
+Flutter SDK
+Emulator / Physical Device
+⚙️ Procedure (GUI – ANDROID STUDIO ✅)
+🔹 Step 1: Open Android Studio
+Open existing project
+OR
+Create new Flutter project
+🔹 Step 2: Open main.dart
+Go to:
+lib → main.dart
+Remove existing code
+🔹 Step 3: Write GridView Code
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  final List<String> items = [
+    "A", "B", "C", "D", "E", "F"
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text("GridView Example")),
+        body: GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2, // 2 columns
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+          ),
+          itemCount: items.length,
+          itemBuilder: (context, index) {
+            return Container(
+              color: Colors.blue,
+              child: Center(
+                child: Text(
+                  items[index],
+                  style: TextStyle(fontSize: 24, color: Colors.white),
+                ),
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+🔹 Step 4: Start Emulator
+Tools → Device Manager
+Start virtual device
+🔹 Step 5: Run Application
+Click ▶ Run button
+Select emulator
+💻 Code Explanation (Viva Gold 🔥)
+🔸 GridView
+Displays items in grid format
+🔸 GridView.builder
+Efficient way to create dynamic grid
+🔸 SliverGridDelegateWithFixedCrossAxisCount
+Defines number of columns
+🔸 crossAxisCount
+Number of columns
+🔸 mainAxisSpacing
+Space between rows
+🔸 crossAxisSpacing
+Space between columns
+🖥️ Output:
+Grid layout displayed
+2 columns
+Items A–F shown in boxes
+
+
+EXPERIMENT 8 (FINAL JOURNAL FORMAT)
+🧪 Title:
+
+Construct Metadata of an E-commerce PWA in a Web App Manifest File to Enable “Add to Home Screen” Feature
+
+🎯 Aim:
+
+To construct a Web App Manifest file for an E-commerce Progressive Web App to enable the “Add to Home Screen” feature.
+
+🛠️ Tools Required:
+Ubuntu OS
+Web Browser (Google Chrome)
+Text Editor (VS Code / Notepad++)
+⚙️ Procedure:
+Step 1:
+
+Create a project folder named ecommerce_pwa
+
+Step 2:
+
+Create the following files inside the folder:
+
+index.html
+manifest.json
+Icon images (icon-192.png, icon-512.png)
+Step 3:
+
+Create a manifest.json file and add the following code:
+
+{
+  "name": "My E-commerce App",
+  "short_name": "E-Shop",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0d6efd",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+Step 4:
+
+Link the manifest file in index.html
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>E-commerce PWA</title>
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0d6efd">
+
+</head>
+<body>
+  <h1>Welcome to E-commerce Store</h1>
+</body>
+</html>
+Step 5:
+
+Open index.html in browser (Chrome)
+
+Step 6:
+
+Click three dots menu → Install App / Add to Home Screen
+
+🖥️ Output:
+The web application is installable
+App icon appears on home screen
+App opens like a native mobile application
+
+
+EXPERIMENT 9
+🧪 Title:
+
+Create a Responsive User Interface using Media Queries
+
+🎯 Aim:
+
+To create a responsive user interface for a website layout using media queries.
+
+🛠️ Prerequisites:
+HTML5
+CSS3
+JavaScript
+🛠️ Tools Required:
+Ubuntu OS
+VS Code / any code editor
+Web Browser (Chrome)
+⚙️ Procedure (GUI / FILE-BASED ✅)
+🔹 Step 1:
+
+Create a project folder (e.g., ShopEasy)
+
+🔹 Step 2:
+
+Create the following files:
+
+index.html
+manifest.json
+js/script.js
+css/styles.css
+Images folder (images/)
+🔹 Step 3: Create index.html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ShopEasy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- jQuery Mobile -->
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+<link rel="stylesheet" href="css/styles.css">
+<link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+
+<div data-role="page" id="home">
+  <div data-role="header">
+    <h1>ShopEasy</h1>
+  </div>
+
+  <div role="main" class="ui-content">
+    <ul data-role="listview" data-inset="true">
+      <li>
+        <img src="images/smartphone.jpg" alt="Smartphone">
+        <h2>Smartphone</h2>
+        <p>₹15,000</p>
+        <button onclick="addToCart('Smartphone',15000)">Add to Cart</button>
+      </li>
+    </ul>
+
+    <a href="#cart" class="ui-btn ui-corner-all ui-shadow">Go to Cart</a>
+  </div>
+
+  <div data-role="footer">
+    <h4>&copy; 2026 ShopEasy</h4>
+  </div>
+</div>
+
+<div data-role="page" id="cart">
+  <div data-role="header">
+    <h1>Your Cart</h1>
+  </div>
+
+  <div role="main" class="ui-content">
+    <ul id="cartItems" data-role="listview" data-inset="true"></ul>
+    <p id="totalPrice"></p>
+    <a href="#home" class="ui-btn ui-corner-all ui-shadow">Back to Home</a>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js');
+}
+</script>
+
+</body>
+</html>
+🔹 Step 4: Create manifest.json
+{
+  "name": "ShopEasy",
+  "short_name": "ShopEasy",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "images/icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+🔹 Step 5: Create script.js
+let cart = [];
+
+function addToCart(product, price) {
+  cart.push({ product, price });
+  alert(product + " added to cart!");
+  displayCart();
+}
+
+function displayCart() {
+  let cartList = document.getElementById("cartItems");
+  cartList.innerHTML = "";
+
+  let total = 0;
+
+  cart.forEach(item => {
+    let li = document.createElement("li");
+    li.textContent = item.product + " - ₹" + item.price;
+    cartList.appendChild(li);
+    total += item.price;
+  });
+
+  document.getElementById("totalPrice").textContent = "Total: ₹" + total;
+}
+🔹 Step 6: Create styles.css (IMPORTANT – MEDIA QUERY 🔥)
+body {
+  font-family: Arial;
+}
+
+/* Mobile View */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 20px;
+  }
+}
+
+/* Tablet View */
+@media (min-width: 601px) and (max-width: 1024px) {
+  h1 {
+    font-size: 28px;
+  }
+}
+
+/* Desktop View */
+@media (min-width: 1025px) {
+  h1 {
+    font-size: 36px;
+  }
+}
+🔹 Step 7:
+
+Open index.html in browser
+
+🖥️ Output:
+Responsive UI adjusts based on screen size
+Cart functionality works
+Layout adapts for mobile, tablet, desktop
+
+
+EXPERIMENT 10
+🧪 Title:
+
+Testing PWA using Google Lighthouse Analysis Tool
+
+🎯 Aim:
+
+To use Google Lighthouse PWA Analysis Tool to test the functioning of a Progressive Web Application.
+
+🛠️ Tools Required:
+Ubuntu OS
+Google Chrome Browser
+Any PWA Web Application
+⚙️ Procedure (GUI – CHROME BASED ✅)
+🔹 Step 1:
+
+Open your PWA project in Google Chrome
+
+🔹 Step 2:
+
+Right-click on the page → Click Inspect
+
+🔹 Step 3:
+
+Go to Lighthouse Tab
+
+(If not visible → click “>>” to find it)
+
+🔹 Step 4:
+
+Select Categories:
+
+✔ Performance
+✔ Accessibility
+✔ Best Practices
+✔ SEO
+✔ PWA
+🔹 Step 5:
+
+Select Device:
+
+Mobile / Desktop
+🔹 Step 6:
+
+Click “Analyze Page Load”
+
+🔹 Step 7:
+
+Wait for report generation
+
+🖥️ Output:
+Lighthouse generates report with scores:
+Performance
+Accessibility
+Best Practices
+SEO
+PWA
+Shows:
+Strengths
+Issues
+Suggestions
+
+
+EXPERIMENT 11
+🧪 Title:
+
+Analyze E-commerce PWA using Google Lighthouse Tool
+
+🎯 Aim:
+
+To use Google Lighthouse PWA Analysis Tool to test the functioning of the web application created in Experiment 8.
+
+🛠️ Prerequisites:
+HTML
+JavaScript
+JSON
+🛠️ Tools Required:
+Ubuntu OS
+Google Chrome Browser
+VS Code
+Lighthouse Tool (built into Chrome)
+⚙️ Procedure (GUI – CHROME DEVTOOLS ✅)
+🔹 Step 1:
+
+Open your E-commerce PWA (Exp 8 project) in Google Chrome
+
+🔹 Step 2:
+
+Open Developer Tools
+
+Right-click → Inspect
+OR
+Press:
+Ctrl + Shift + I
+🔹 Step 3:
+
+Go to Lighthouse Tab
+(Earlier called “Audits” tab)
+
+🔹 Step 4:
+
+Select all categories:
+
+✔ Performance
+✔ Accessibility
+✔ Best Practices
+✔ SEO
+✔ PWA
+🔹 Step 5:
+
+Click:
+👉 “Analyze Page Load” / “Run Audit”
+
+🔹 Step 6:
+
+Wait 30–60 seconds
+
+🔹 Step 7:
+
+Observe the generated report
+
+🖥️ Output:
+Lighthouse report generated
+Scores displayed for:
+Performance
+Accessibility
+Best Practices
+SEO
+PWA
+Suggestions shown for improvement

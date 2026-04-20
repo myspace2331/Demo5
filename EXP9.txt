@@ -1,0 +1,159 @@
+EXP9
+To Create a responsive User Interface using media Queries. 
+
+
+index.html  
+<!DOCTYPE html>  
+<html>  
+<head>  
+<meta charset="UTF-8">  
+<title>ShopEasy</title>  
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+  
+  
+<!-- jQuery & jQuery Mobile -->  
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-  
+1.4.5.min.css">  
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>  
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>  
+  
+  
+<!-- Custom CSS -->  
+<link rel="stylesheet" href="css/styles.css">  
+<!-- Manifest -->  
+<link rel="manifest" href="manifest.json">  
+</head>  
+<body>  
+  
+  
+<div data-role="page" id="home">  
+<div data-role="header">  
+<h1>ShopEasy</h1>  
+</div>  
+  
+  
+<div role="main" class="ui-content">  
+<ul data-role="listview" data-inset="true">  
+<li>  
+<img src="images/smartphone.jpg" alt="Smartphone">  
+<h2>Smartphone</h2>  
+<p>₹15,000</p>  
+<button onclick="addToCart('Smartphone',15000)">Add to Cart</button>  
+</li>  
+</ul>  
+<a href="#cart" class="ui-btn ui-corner-all ui-shadow">Go to Cart</a>  
+</div>  
+  
+  
+<div data-role="footer">  
+<h4>&copy; 2026 ShopEasy</h4>  
+</div>  
+</div>  
+<div data-role="page" id="cart">  
+<div data-role="header">  
+<h1>Your Cart</h1>  
+</div>  
+<div role="main" class="ui-content">  
+<ul id="cartItems" data-role="listview" data-inset="true"></ul>  
+<p id="totalPrice"></p>  
+<a href="#home" class="ui-btn ui-corner-all ui-shadow">Back to Home</a>  
+</div>  
+</div>  
+  
+  
+<script 	src="js/script.js"></script> <script> if ('serviceWorker' in navigator) { navigator.serviceWorker.register('./sw.js')
+;  
+}  
+</script>  
+</body>  
+</html>  
+  
+  
+manifest.json  
+{  
+"name": "ShopEasy",  
+"short_name": "ShopEasy", "start_url": 
+"./index.html",  
+"scope": "./",  
+"display": "standalone",  
+"background_color": "#ffffff",  
+"theme_color": "#000000",  
+"icons": [  
+{  
+"src": "images/icon.png",  
+"sizes": "192x192",  
+"type": "image/png"  
+},  
+{  
+"src": "images/icon-512.png",  
+"sizes": "512x512",  
+"type": "image/png"  
+} ]  
+}  
+  
+  
+script.js let  
+cart = [];  
+  
+  
+function addToCart(product, price) { 
+cart.push({ 	product, 	price 	}); 
+alert(product + " added to cart!"); 
+displayCart();  
+}  
+  
+  
+function displayCart() { let cartList =  
+document.getElementById("cartItems"); cartList.innerHTML = "";  
+let total = 0;  
+  
+  
+cart.forEach(item 	=> 	{ 	let 	li 	= 
+document.createElement("li"); li.textContent = item.product + " - ₹" + item.price; 
+cartList.appendChild(li); total += item.price;  
+});  
+  
+  
+document.getElementById("totalPrice").textContent = "Total: ₹" + total;  
+}  
+
+
+
+PWA create karne ke liye aapko koi special software install nahi karna hai, bas ye 5 steps follow karein:
+
+1. Folder Structure Setup
+Ek folder banayein (e.g., ShopEasy) aur usme ye structure rakhein:
+
+index.html (Main UI)
+
+manifest.json (App Config)
+
+js/script.js (Cart Logic)
+
+js/sw.js (Service Worker - isko abhi khali file rakhein)
+
+images/ (Isme icon.png aur smartphone.jpg rakhein)
+
+2. Files Save Karein
+Jo code aapne upar diya hai, usko copy karke sahi files mein save karein.
+
+Tip: Agar aapke paas images nahi hain, toh internet se koi bhi random photo download karke same naam se save kar dein.
+
+3. Service Worker (Zaroori)
+js/sw.js file banayein aur usme ye basic code dal dein (taaki PWA installable ban jaye):
+
+JavaScript
+self.addEventListener('fetch', (event) => {
+  // Filhal ye empty hai, par PWA ke liye iska hona zaroori hai
+});
+4. Local Server Start Karein
+Browser security ki wajah se PWA direct file open (file://) karne par nahi chalta.
+
+VS Code: Live Server extension install karke "Go Live" par click karein.
+
+Browser: http://127.0.0.1:5500/index.html jaisa link open hoga.
+
+5. Install & Run
+Browser mein link open hone ke baad, URL bar ke right side mein "Install" icon (desktop par) ya "Add to Home Screen" (mobile par) ka option aayega.
+
+Install karne ke baad, ye app ki tarah aapke desktop/mobile menu mein dikhega.

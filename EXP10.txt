@@ -1,0 +1,12 @@
+EXP10
+Make use of google Lighthouse PWA Analysis Tool to test the PWA functioning. 
+
+
+How to test using Lighthouse
+Open your app in Chrome.
+
+Press F12 (Inspect) and go to the Lighthouse tab.
+
+Select "PWA" (and "Performance" if you like).
+
+Click "Analyze page load".

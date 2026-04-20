@@ -1,0 +1,71 @@
+EXP1
+To install and configure Flutter Environment.
+
+Steps to install flutter:
+
+sudo apt update && sudo apt upgrade -y
+
+sudo apt install curl git unzip xz-utils zip libglu1-mesa -y
+
+cd Downloads
+
+curl -O https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_latest-stable.tar.xz
+
+tar xf flutter_linux_latest-stable.tar.xz
+
+sudo mv flutter /opt/
+
+echo 'export PATH="$PATH:/opt/flutter/bin"' >> ~/.bashrc
+source ~/.bashrc
+
+flutter doctor
+
+sudo snap install android-studio --classic
+
+Then:
+
+Open Android Studio
+Install SDK
+Install Emulator
+Accept licenses:
+flutter doctor --android-licenses
+
+flutter doctor
+
+Steps to write code:
+
+flutter create my_app
+
+1. VS Code open karo
+2. “Open Folder” → my_app select karo
+3. lib folder → main.dart open karo to write code:
+
+import 'package:flutter/material.dart';
+void main() {
+  runApp(MaterialApp(
+    home: Center(
+      child: Text('Hello, World!'),
+    ),
+
+OR
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    home: Scaffold(
+      appBar: AppBar(
+        title: Text('Hello App'),
+      ),
+      body: Center(
+        child: Text('Hello World'),
+      ),
+    ),
+  ));
+}
+
+flutter run
+
+
+
+

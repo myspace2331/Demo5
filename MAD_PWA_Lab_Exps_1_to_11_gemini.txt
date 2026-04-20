@@ -1,0 +1,1057 @@
+MAD & PWA Lab Experiment File (Experiments 1 to 11)
+
+## Standard Android Studio Execution Steps (For all Flutter Practicals)
+Unless otherwise specified in the experiment's specific steps, follow this standard procedure to run these Flutter apps in Android Studio:
+1. Open Android Studio and click **New Flutter Project**.
+2. Verify your Flutter SDK path, click **Next**. 
+3. Enter your Project Name (e.g., `exp1`), set the location, ensure the project type is "Application", and click **Create**.
+4. In the Project Explorer on the left, navigate to the `lib` folder and open `main.dart`.
+5. Delete all the default code and **paste the code provided** for the respective experiment.
+6. From the device dropdown menu in the top toolbar, select an **Android Emulator** (e.g., Pixel 6 API 34) or your connected physical Android device.
+7. Click the green **Run (Play)** button (or press `Shift + F10`) to build and deploy the app.
+
+---
+
+## Experiment 1: Flutter First Application
+**Aim:** To install and configure Flutter Environment and run a simple application.
+
+**Code (`lib/main.dart`):**
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text("Hello World Flutter")),
+        body: Center(
+          child: Text("Hello, World!", style: TextStyle(fontSize: 24)),
+        ),
+      ),
+    );
+  }
+}
+```
+
+---
+
+## Experiment 2: Student ID Card using Basic Widgets
+**Aim:** To develop a flutter UI for creating student-ID using basic widgets of flutter.
+
+**Code (`lib/main.dart`):**
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('ID Card'),
+          backgroundColor: Colors.blue,
+        ),
+        body: Center(
+          child: Card(
+            elevation: 6,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15),
+            ),
+            child: Padding(
+              padding: EdgeInsets.all(20),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  CircleAvatar(
+                    radius: 50,
+                    backgroundImage: NetworkImage(
+                        'https://media.licdn.com/dms/image/v2/D4D03AQEGRNfTcusryQ/profile-displayphoto-shrink_200_200/B4DZhNQQWEHWAY-/0/1753642790470?e=2147483647&v=beta&t=6_THpwC39ctn8LWGm2h62nEL_GjcL1S2MO_rPS4zyWg'),
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    'Sanket Bhoir',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
+                  SizedBox(height: 5),
+                  Text('Roll No: 02'),
+                  SizedBox(height: 5),
+                  Text('Department: Information Technology'),
+                  SizedBox(height: 5),
+                  Text('A. P. Shah Institute of Technology'),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+---
+
+## Experiment 3: Layouts using ListView
+**Aim:** To design a layout of Flutter App using layout widgets (Product List View).
+
+**Code (`lib/main.dart`):**
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: ProductList(),
+  ));
+}
+
+class ProductList extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Product List'),
+      ),
+      body: ListView(
+        children: [
+          ListTile(
+            leading: Image.network(
+                'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTZBzbk-zQcQqNeimiDk1_qqQ_Ahjhtx2moxk15cgussrKap3_pTvwQN9NZh_7EDczYtr6JXwHOINIKM38pFJuXxSnxbQPVCihGeTuaMaHfT946SkP6YE_-'),
+            title: Text('Cool Sneakers'),
+            subtitle: Text('Comfortable running shoes'),
+            trailing: Text('\$59.99'),
+          ),
+          ListTile(
+            leading: Image.network(
+                'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTtkAvLiFrW8Ws067uMNPb82OzJy3tCxndCkcjFWEK7tifkju56NQmkrLZp313slYTlinogu4BrOjNaWrKeTmxE8BBOK9K_kFmrAWSuxDVw0nnu3CHElv5CdA'),
+            title: Text('Smart Watch'),
+            subtitle: Text('Latest smartwatch with fitness tracking'),
+            trailing: Text('\$120.99'),
+          ),
+          ListTile(
+            leading: Image.network(
+                'https://8mm.in/cdn/shop/files/px8_mclaren_edition_grey_001.webp?v=1756630862&width=900'),
+            title: Text('Wireless Headphones'),
+            subtitle: Text('Noise-canceling Bluetooth headphones'),
+            trailing: Text('\$89.99'),
+          ),
+          ListTile(
+            leading: Image.network(
+                'https://static1.industrybuying.com/products/it-security/computer-accessories/mouse/ITS.MOU.927481164_1727084032730.webp'),
+            title: Text('Gaming Mouse'),
+            subtitle: Text('High precision ergonomic gaming mouse'),
+            trailing: Text('\$39.99'),
+          ),
+          ListTile(
+            leading: Image.network(
+                'https://res.cloudinary.com/genx21/image/upload/f_auto/v1766562156/products/wcquwpqg9urftklhbjnk.jpg'),
+            title: Text('Mechanical Keyboard'),
+            subtitle: Text('RGB backlit mechanical keyboard'),
+            trailing: Text('\$75.00'),
+          ),
+        ],
+      ),
+    );
+  }
+}
+```
+
+---
+
+## Experiment 4: Interactive Forms
+**Aim:** To Design an interactive Form using various form widgets.
+
+**Code (`lib/main.dart`):**
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    theme: ThemeData(primarySwatch: Colors.deepPurple),
+    home: MyRegistrationForm(),
+  ));
+}
+
+class MyRegistrationForm extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return MyRegistrationFormState();
+  }
+}
+
+class MyRegistrationFormState extends State<MyRegistrationForm> {
+  final _formKey = GlobalKey<FormState>();
+  bool _isPasswordHidden = true;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Create Account"),
+        centerTitle: true,
+      ),
+      body: SingleChildScrollView(
+        child: Container(
+          padding: EdgeInsets.all(24.0),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                Icon(Icons.person_add_alt_1, size: 80, color: Colors.deepPurple),
+                SizedBox(height: 30),
+                TextFormField(
+                  validator: (msg) {
+                    if (msg == null || msg.isEmpty) {
+                      return "Please enter your name";
+                    }
+                    return null;
+                  },
+                  decoration: InputDecoration(
+                    labelText: "Full Name",
+                    hintText: "Enter Your Name",
+                    prefixIcon: Icon(Icons.person),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12.0),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 16),
+                TextFormField(
+                  keyboardType: TextInputType.phone,
+                  validator: (msg) {
+                    if (msg == null || msg.isEmpty) {
+                      return "Please enter Mobile Number";
+                    }
+                    if (msg.length != 10) {
+                      return "Please enter exactly 10 digits";
+                    }
+                    return null;
+                  },
+                  decoration: InputDecoration(
+                    labelText: "Mobile",
+                    hintText: "Enter Your Mobile No.",
+                    prefixIcon: Icon(Icons.phone),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12.0),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 16),
+                TextFormField(
+                  obscureText: _isPasswordHidden,
+                  validator: (msg) {
+                    if (msg == null || msg.isEmpty) {
+                      return "Please enter Password";
+                    }
+                    if (msg.length < 6) {
+                      return "Password must be at least 6 characters";
+                    }
+                    return null;
+                  },
+                  decoration: InputDecoration(
+                    labelText: "Password",
+                    hintText: "Enter Your Password",
+                    prefixIcon: Icon(Icons.lock),
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                        _isPasswordHidden ? Icons.visibility : Icons.visibility_off,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          _isPasswordHidden = !_isPasswordHidden;
+                        });
+                      },
+                    ),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12.0),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 32),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.symmetric(vertical: 16.0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12.0),
+                    ),
+                  ),
+                  child: Text("Register", style: TextStyle(fontSize: 18)),
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text('Registration successful!')),
+                      );
+                    }
+                  },
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+---
+
+## Experiment 5: Navigation and Routing
+**Aim:** To apply navigation and routing in Flutter App.
+
+**Code (`lib/main.dart`):**
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MaterialApp(
+    home: HomeRoute(),
+    debugShowCheckedModeBanner: false,
+  ));
+}
+
+class HomeRoute extends StatelessWidget {
+  const HomeRoute({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Homepage'),
+        backgroundColor: Colors.amber,
+      ),
+      body: Center(
+        child: ElevatedButton(
+          child: const Text("Click me to open Second page"),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const SecondRoute()),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class SecondRoute extends StatelessWidget {
+  const SecondRoute({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Second page'),
+        backgroundColor: Colors.amber,
+      ),
+      body: Center(
+        child: ElevatedButton(
+          child: const Text("Click me to open last page"),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const ThirdRoute()),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class ThirdRoute extends StatelessWidget {
+  const ThirdRoute({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Last Page'),
+        backgroundColor: Colors.amber,
+      ),
+      body: Center(
+        child: const Text("The End"),
+      ),
+    );
+  }
+}
+```
+
+---
+
+## Experiment 6: Gestures in Flutter
+**Aim:** Apply concepts of gestures in Flutter App using the GestureDetector widget.
+
+**Code (`lib/main.dart`):**
+```dart
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Code Sample',
+      home: MyStatefulWidget(),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+class MyStatefulWidget extends StatefulWidget {
+  @override
+  _MyStatefulWidgetState createState() => _MyStatefulWidgetState();
+}
+
+class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+  bool lightIsOn = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('CHANGE STATE OF LIGHTS'),
+      ),
+      body: Container(
+        alignment: FractionalOffset.center,
+        color: lightIsOn ? Colors.deepOrangeAccent : Colors.white,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Icon(
+                Icons.lightbulb_outline,
+                color: lightIsOn ? Colors.yellow.shade600 : Colors.black,
+                size: 60,
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  lightIsOn = !lightIsOn;
+                });
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.yellow.shade600,
+                  border: Border.all(color: Colors.black, width: 2),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                padding: EdgeInsets.all(8),
+                child: Text(lightIsOn ? 'TURN LIGHT OFF' : 'TURN LIGHT ON'),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
+
+---
+
+## Experiment 7: Firebase Authentication
+**Aim:** Implement Firebase and its Authentication in a Flutter App.
+
+**Dependencies (`pubspec.yaml`):**
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  firebase_core: latest_version
+  firebase_auth: latest_version
+```
+
+**Code (`lib/main.dart`):**
+```dart
+import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: const FirebaseOptions(
+      apiKey: "AlzaSyA4-TMl7JbPJeWQVMtzO14xUCvLh2qeHiM",
+      authDomain: "exp7-c4f65.firebaseapp.com",
+      projectId: "exp7-c4f65",
+      storageBucket: "exp7-c4f65.firebasestorage.app",
+      messagingSenderId: "607792313295",
+      appId: "1:607792313295:web:cf24e88ac2e959a4f058ba",
+    ),
+  );
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: LoginPage(),
+    );
+  }
+}
+
+class LoginPage extends StatefulWidget {
+  @override
+  _LoginPageState createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  Future<void> login() async {
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController.text.trim(),
+        password: passwordController.text.trim(),
+      );
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => HomePage()),
+      );
+    } catch (e) {
+      print("Login Error: \$e");
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Colors.blue.shade400, Colors.purple.shade400],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+        ),
+        child: Center(
+          child: SingleChildScrollView(
+            child: Card(
+              elevation: 10,
+              margin: EdgeInsets.symmetric(horizontal: 25),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Padding(
+                padding: EdgeInsets.all(20),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(Icons.lock, size: 60, color: Colors.blue),
+                    SizedBox(height: 10),
+                    Text(
+                      "Welcome Back",
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    TextField(
+                      controller: emailController,
+                      decoration: InputDecoration(
+                        prefixIcon: Icon(Icons.email),
+                        labelText: "Email",
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 15),
+                    TextField(
+                      controller: passwordController,
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        prefixIcon: Icon(Icons.lock),
+                        labelText: "Password",
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: login,
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.symmetric(vertical: 15),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          backgroundColor: Colors.blue,
+                        ),
+                        child: Text("Login", style: TextStyle(fontSize: 16)),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => RegisterPage()),
+                        );
+                      },
+                      child: Text("Don't have an account? Register"),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class RegisterPage extends StatefulWidget {
+  @override
+  _RegisterPageState createState() => _RegisterPageState();
+}
+
+class _RegisterPageState extends State<RegisterPage> {
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  Future<void> register() async {
+    try {
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: emailController.text.trim(),
+        password: passwordController.text.trim(),
+      );
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => HomePage()),
+      );
+    } catch (e) {
+      print("Register Error: \$e");
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Colors.orange.shade400, Colors.pink.shade400],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+        ),
+        child: Center(
+          child: SingleChildScrollView(
+            child: Card(
+              elevation: 10,
+              margin: EdgeInsets.symmetric(horizontal: 25),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Padding(
+                padding: EdgeInsets.all(20),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(Icons.person_add, size: 60, color: Colors.orange),
+                    SizedBox(height: 10),
+                    Text(
+                      "Create Account",
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    TextField(
+                      controller: emailController,
+                      decoration: InputDecoration(
+                        prefixIcon: Icon(Icons.email),
+                        labelText: "Email",
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 15),
+                    TextField(
+                      controller: passwordController,
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        prefixIcon: Icon(Icons.lock),
+                        labelText: "Password",
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: register,
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.symmetric(vertical: 15),
+                          backgroundColor: Colors.orange,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                        ),
+                        child: Text("Register"),
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: Text("Already have an account? Login"),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser;
+    return Scaffold(
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Colors.green.shade400, Colors.blue.shade400],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+        ),
+        child: Center(
+          child: Card(
+            elevation: 10,
+            margin: EdgeInsets.symmetric(horizontal: 25),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Padding(
+              padding: EdgeInsets.all(25),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(Icons.person, size: 60, color: Colors.green),
+                  SizedBox(height: 10),
+                  Text(
+                    "Welcome",
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    "${user?.email}",
+                    style: TextStyle(fontSize: 16, color: Colors.grey[700]),
+                  ),
+                  SizedBox(height: 20),
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton.icon(
+                      onPressed: () async {
+                        await FirebaseAuth.instance.signOut();
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => LoginPage()),
+                        );
+                      },
+                      icon: Icon(Icons.logout),
+                      label: Text("Logout"),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.red,
+                        padding: EdgeInsets.symmetric(vertical: 15),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+---
+
+## Experiment 8: E-commerce PWA Manifest
+**Aim:** Construct meta data of your Ecommerce PWA in a Web app manifest file to enable "add to home screen feature".
+
+**Code (`lib/main.dart`):**
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const EcommercePWA());
+}
+
+class EcommercePWA extends StatelessWidget {
+  const EcommercePWA({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter eCommerce PWA',
+      theme: ThemeData(
+        primarySwatch: Colors.orange,
+      ),
+      home: const HomePage(),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('My PWA Store'),
+        backgroundColor: Colors.orange,
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Icon(Icons.shopping_cart, size: 100, color: Colors.orange),
+            const SizedBox(height: 20),
+            const Text(
+              'Welcome to our Progressive Web App!',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.orange),
+              child: const Text('Browse Products'),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
+
+**Code (`web/index.html`):**
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="/">
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="hello_world">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="favicon.png"/>
+  <title>hello_world</title>
+</head>
+<body>
+  <script src="flutter_bootstrap.js" async></script>
+  <script src="flutter_service_worker.js" async></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('flutter_service_worker.js');
+      });
+    }
+  </script>
+</body>
+</html>
+```
+
+**Code (`web/manifest.json`):**
+```json
+{
+    "name": "Flutter eCommerce PWA",
+    "short_name": "FlutterPWA",
+    "description": "A powerful eCommerce PWA built with Flutter.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#ff6600",
+    "icons": [
+        {
+            "src": "icons/Icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
+```
+
+---
+
+## Experiment 9: Responsive UI with Media Queries
+**Aim:** To Create a responsive User Interface using media Queries (HTML, CSS3, JS).
+
+**Code (`index.html`):**
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ShopEasy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div data-role="page" id="home">
+        <div data-role="header">
+            <h1>ShopEasy</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <ul data-role="listview" data-inset="true">
+                <li>
+                    <img src="images/smartphone.jpg" alt="Smartphone">
+                    <h2>Smartphone</h2>
+                    <p>₹15,000</p>
+                    <button onclick="addToCart('Smartphone', 15000)">Add to Cart</button>
+                </li>
+            </ul>
+            <a href="#cart" class="ui-btn ui-corner-all ui-shadow">Go to Cart</a>
+        </div>
+        <div data-role="footer">
+            <h4>&copy; 2026 ShopEasy</h4>
+        </div>
+    </div>
+
+    <div data-role="page" id="cart">
+        <div data-role="header">
+            <h1>Your Cart</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <ul id="cartItems" data-role="listview" data-inset="true"></ul>
+            <p id="totalPrice"></p>
+            <a href="#home" class="ui-btn ui-corner-all ui-shadow">Back to Home</a>
+        </div>
+    </div>
+    
+    <script src="js/script.js"></script>
+    <script> 
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js');
+        }
+    </script>
+</body>
+</html>
+```
+
+**Code (`js/script.js`):**
+```javascript
+let cart = [];
+
+function addToCart(product, price) { 
+    cart.push({ product, price });
+    alert(product + " added to cart!");
+    displayCart();
+}
+
+function displayCart() { 
+    let cartList = document.getElementById("cartItems");
+    cartList.innerHTML = "";
+    let total = 0;
+
+    cart.forEach(item => { 
+        let li = document.createElement("li"); 
+        li.textContent = item.product + " - " + item.price;
+        cartList.appendChild(li); 
+        total += item.price;
+    });
+    document.getElementById("totalPrice").textContent = "Total: " + total;
+}
+```
+
+**Code (`manifest.json`):**
+```json
+{
+    "name": "ShopEasy",
+    "short_name": "ShopEasy",
+    "start_url": "./index.html",
+    "scope": "./",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#000000",
+    "icons": [
+        {
+            "src": "images/icon.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "images/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
+```
+
+---
+
+## Experiments 10 & 11: Lighthouse PWA Analysis
+**Aim:** Make use of google Lighthouse PWA Analysis Tool to test the PWA functioning of web application created in experiment 8/9.
+
+**Execution Steps (No code required):**
+1. Run your PWA app in Chrome (by clicking play with Chrome(web) selected in Android Studio, or hosting it locally/GitHub pages).
+2. Open Chrome Developer Tools (`F12` or right-click -> `Inspect`).
+3. Click on the **Lighthouse** tab at the top of the DevTools window.
+4. Check all desired categories (Performance, Accessibility, Best Practices, SEO, PWA) and select Device (Mobile or Desktop).
+5. Click **Analyze page load** (or "Perform an audit").
+6. Review the generated scores and use the findings to fix any identified PWA issues.

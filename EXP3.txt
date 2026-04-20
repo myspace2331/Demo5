@@ -1,0 +1,83 @@
+EXP3
+To design a layout of flutter app using layout widgets
+(To develop a flutter UI for creating List View using Layout widgets of
+ flutter.)
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: ProductList(),
+  ));
+}
+
+class ProductList extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Product List'),
+      ),
+      body: ListView(
+        children: [
+          ListTile(
+            leading: Image.network(
+              'https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77',
+              width: 50,
+              height: 50,
+              fit: BoxFit.cover,
+            ),
+            title: Text('Cool Sneakers'),
+            subtitle: Text('Comfortable running shoes'),
+            trailing: Text('\$59.99'),
+          ),
+          ListTile(
+            leading: Image.network(
+              'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9',
+              width: 50,
+              height: 50,
+              fit: BoxFit.cover,
+            ),
+            title: Text('Smart Watch'),
+            subtitle: Text('Latest smartwatch with fitness tracking'),
+            trailing: Text('\$120.99'),
+          ),
+          ListTile(
+            leading: Image.network(
+              'https://images.unsplash.com/photo-1505740420928-5e560c06d30e',
+              width: 50,
+              height: 50,
+              fit: BoxFit.cover,
+            ),
+            title: Text('Wireless Headphones'),
+            subtitle: Text('Noise-canceling Bluetooth headphones'),
+            trailing: Text('\$89.99'),
+          ),
+          ListTile(
+            leading: Image.network(
+              'https://images.unsplash.com/photo-1587202372775-e229f172b9d7',
+              width: 50,
+              height: 50,
+              fit: BoxFit.cover,
+            ),
+            title: Text('Gaming Mouse'),
+            subtitle: Text('High precision ergonomic gaming mouse'),
+            trailing: Text('\$39.99'),
+          ),
+          ListTile(
+            leading: Image.network(
+              'https://images.unsplash.com/photo-1517336714731-489689fd1ca8',
+              width: 50,
+              height: 50,
+              fit: BoxFit.cover,
+            ),
+            title: Text('Mechanical Keyboard'),
+            subtitle: Text('RGB backlit mechanical keyboard'),
+            trailing: Text('\$75.00'),
+          ),
+        ],
+      ),
+    );
+  }
+}

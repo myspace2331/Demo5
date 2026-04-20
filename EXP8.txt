@@ -1,0 +1,89 @@
+EXP8
+Make use of PWA framework for developing progressive web application using the concept of webapp manifest.
+
+Step 1: Enable Flutter Web
+1.	Open a terminal and enable Flutter Web by running:
+➢	flutter config –enable-web
+
+
+
+2.	Verify Flutter Web support: 
+➢	flutter devices
+➢	If Chrome is listed, Flutter Web is enabled
+
+
+
+Step 2: Create a New Flutter Web Project
+1.	Create a new Flutter project:
+flutter create my_pwa_app
+2.	Navigate to the project directory:
+3.	cd my_pwa_app
+
+
+Step 3: Open the project in VS Code or Android Stud
+Open the newly created project.
+•	lib
+•	android
+•	ios
+•	web
+Since this is for PWA, we will mostly work inside the web folder. 
+Step 4: Build the PWA
+Generate a web build with PWA support:
+flutter build web
+This creates a build/web/ directory with PWA files.
+
+
+
+
+Step 5: Create the manifest file
+Inside the web folder, create a file named:
+web/manifest.json
+This file tells the browser details about your app
+
+
+Step 6: Write the basic metadata in manifest.json
+Add this code:
+{
+"name": "Flutter PWA", "short_name": "PWA",
+"description": "A Flutter Progressive Web App", "start_url": "/",
+"display": "standalone", "background_color": "#ffffff", "theme_color": "#1976d2", "icons": [
+{
+"src": "icons/Icon-192.png", "sizes": "192x192",
+"type": "image/png"
+},
+{
+"src": "icons/Icon-512.png", "sizes": "512x512", 
+"type": "image/png"
+}
+]
+}
+
+
+Step 7: Link manifest.json in index.html
+web/index.html
+
+
+Inside the <head> section, add this line:
+<link rel="manifest" href="manifest.json">
+This tells the browser where the manifest file is located.
+ 
+Step 8: Enable Service Worker for Offline Support
+Ensure flutter_service_worker.js is registered in index.html:
+<script>
+if ('serviceWorker' in navigator) { window.addEventListener('load', function () { navigator.serviceWorker.register('flutter_service_worker.js');
+});
+}
+</script>
+
+
+
+Step 7: Serve the PWA Locally
+Using Node.js Live Server
+1.  Install Live Server:
+npm install -g live-server
+
+
+
+Navigate to build/web/ and run:
+npm install -g serve serve -s build/web
+This will automatically open the app in your browser. 
