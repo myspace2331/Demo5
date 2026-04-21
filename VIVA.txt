@@ -1,0 +1,156 @@
+VIVA:
+
+exp1:
+import 'package:flutter/material.dart'; → Imports Flutter’s Material Design UI widgets.
+void main() → This is the entry point where the program starts.
+runApp() → It launches the Flutter app on the screen.
+MaterialApp() → It defines the overall structure of the app.
+home: → It sets the first screen of the app.
+Center() → It centers the content on the screen.
+Text('Hello, World!') → It displays the text “Hello, World!” on the screen.
+
+
+exp2:
+✅ Stateless Widget
+👉 A Stateless Widget is a widget whose data cannot change after it is created, meaning its UI remains fixed and does not update dynamically.
+
+✅ Stateful Widget
+👉 A Stateful Widget is a widget whose data can change during runtime, by using setState() function.
+
+What is Scaffold?
+👉 Scaffold is a widget in Flutter that provides the basic layout structure for a screen.
+appBar → Top bar show karne ke liye
+body → Main content display karne ke liye
+📌 AppBar ke andar:
+title → Title text (“TE-IT ID Card”)
+backgroundColor → AppBar ka color
+📌 Body ke andar:
+Center → Content ko center me rakhne ke liye
+Card → Card design ke liye
+Padding → Spacing dene ke liye
+Column → Elements ko vertically arrange karne ke liye
+
+SizedBox(height: 10), → Adds vertical spacing of 10 pixels.
+SizedBox(width: 20),   to add horizontal spacing
+
+
+
+exp3:
+Definition of Layout Widget
+👉 A layout widget is a widget in Flutter that is used to arrange, position, and organize other widgets on the screen.
+
+example:ListView → Arranges items in a scrollable vertical list
+ListTile → Organizes image, text, and price in a structured row
+
+ListView → Creates a scrollable list of items.
+children: → Starts the list of items inside the ListView.
+ListTile → Creates a list item.
+
+Two ways to add image:
+1️⃣ Asset Image
+👉 Load image from your local project folder
+Image.asset('assets/images/photo.png')
+2️⃣ Network Image
+👉 Load image from the internet (URL)
+Image.network('https://example.com/image.png')
+
+
+
+exp4
+✅ 1. 3 inputs lene ke liye kya use kiya hai?
+👉 TextFormField
+
+✅ 2. Inputs ke upar label display ke liye kya use hua hai?
+👉 InputDecoration with labelText
+
+✅ 3. Password hide karne ke liye kya use hua hai?
+👉 obscureText: true
+
+✅ 4. Validation ke liye kya use kiya hai?
+👉 validator function + Form with GlobalKey(Access form state, Validate inputs and Reset or save form)
+
+✅ 5. Button create karne ke liye kya use kiya hai?
+👉 ElevatedButton
+
+Why Stateful Widget is used?
+👉 Stateful Widget is used because the form data and validation can change during runtime.
+📱 Simple explanation:
+User input change hota hai (name, mobile, password)
+Validation ke baad UI update hota hai (error message / success message)
+👉 Yeh sab dynamic changes hain, isliye Stateful Widget use kiya hai
+
+
+
+exp5
+•Each screen is called a Route
+•Flutter uses a Navigator to move between routes
+•The routes are managed like a stack (LIFO – Last In First Out)
+Flutter provides:
+
+1.MaterialPageRoute
+This is a built-in routing class that Connects one screen to another
+
+2.Navigator.push()
+This method is used to Add the new route on top of the stack
+
+3.Navigator.pop()
+This method is used to Close the current screen and Go back to the previous screen.
+
+
+exp6
+GestureDetector aur ElevatedButton mein kya difference hai?
+Answer: ElevatedButton ek readymade Material Design button hai. GestureDetector ek "Invisible" widget hai jo kisi bhi widget (Icon, Text, Container) ko clickable bana sakta hai.
+
+GestureDetector: The main widget used to recognize physical interactions (taps, drags, etc.) on the screen.
+
+onTap: A specific property that triggers a function when the user performs a quick touch and release.
+
+Callback () { }: The anonymous function that contains the logic to be executed once the gesture is detected.
+
+setState(): The command used within the gesture to refresh the UI so the user sees the visual result of their click.
+
+
+exp7
+Construct meta data of your Ecommerce PWA in a Web app manifest file to enable “add to home screen feature.
+
+
+exp8
+PWA stands for Progressive Web App.
+A PWA is a website that behaves like a mobile app.
+It opens in a browser like a normal website, but it can also give an app-like experience such as:
+•install on phone or desktop
+•work in offline mode
+•load faster
+•open in full screen
+•send notifications in some cases
+
+
+exp9
+PWA: A website that behaves like a mobile app with offline and installable features.
+
+manifest.json: Configures the app's appearance, name, and icons for the home screen.
+
+Service Worker: A background script that manages caching and enables offline functionality.
+
+data-role="page": Defines separate screens (Home, Cart) within a single HTML file.
+
+addToCart: Adds product data to a JavaScript array and updates the total price.
+
+displayCart: Dynamically renders the list of items from the array onto the UI.
+
+Standalone: Removes the browser's address bar to give a "full-screen" app feel.
+
+Service Worker Registration: The code in HTML that "turns on" the PWA's background features.
+
+HTTPS: The security requirement needed for a PWA to be considered "installable" by browsers.
+
+
+exp10
+What is Google Lighthouse?
+An open-source tool used to audit web pages for performance, accessibility, and PWA compliance.
+
+What does the PWA badge in Lighthouse signify?
+It confirms the app is fast, reliable, installable, and follows PWA best practices.
+
+ 
+
